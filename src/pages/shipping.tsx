@@ -33,7 +33,7 @@ const Shipping = () => {
   const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    dispatch(saveShippingInfo(shippingInfo))
+    dispatch(saveShippingInfo(shippingInfo));
 
     try {
       const { data } = await axios.post(
@@ -109,9 +109,9 @@ const Shipping = () => {
           </select>
           <input
             required
-            type="text"
-            placeholder="Picode"
-            name="pincode"
+            type="number"
+            placeholder="Pin-Code"
+            name="pinCode"
             value={shippingInfo.pinCode}
             onChange={changeHandler}
           />
